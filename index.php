@@ -1,8 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/IndexSubscriber.php';
+	
 use Symfony\Component\EventDispatcher\EventDispatcher;
-
+use Source\CustomEvent;
+use Source\IndexSubscriber;
 
 $dispatcher = new EventDispatcher();
 $event = new CustomEvent();

@@ -1,4 +1,5 @@
 <?php
+namespace Source;
 
 use Symfony\Component\EventDispatcher\GenericEvent;
 
