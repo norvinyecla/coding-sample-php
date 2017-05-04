@@ -9,3 +9,4 @@ $listener = new IndexListener();
 $event = new GenericEvent();
 
 $dispatcher->addListener('site.index.action', array($listener, 'onIndexAction'));
+$dispatcher->dispatch('site.index.action', $event);
