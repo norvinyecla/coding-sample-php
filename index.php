@@ -1,12 +1,15 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/IndexListener.php';
+require __DIR__ . '/IndexSubscriber.php';
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\EventDispatcher\GenericEvent;
+
 
 $dispatcher = new EventDispatcher();
-$listener = new IndexListener();
-$event = new GenericEvent();
+$subscriber = new IndexSubscriber();
+$event = new CustomEvent();
 
-$dispatcher->addListener('site.index.action', array($listener, 'onIndexAction'));
-$dispatcher->dispatch('site.index.action', $event);
+$subscriber = new IndexSubscriber();
+$dispatcher->addSubscriber($subscriber);
+$dispatcher->dispatch('custom.event.called', $event);
+
+
